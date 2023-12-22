@@ -36,7 +36,7 @@ class QuotesPage:
         self.author_dropdown.select_by_visible_text(author_name) # opens the dropdown, sees what's there and selects the one that matches
     
 
-    # selecting tags_dropdown and the selected tag inside of it
+    # selecting tags_dropdown and the selected tag
     @property
     def tags_dropdown(self) -> Select:
         element = self.browser.find_element(
@@ -70,7 +70,7 @@ class QuotesPage:
         WebDriverWait(self.browser, 10).until(
             expected_conditions.presence_of_element_located(
                 (By.CSS_SELECTOR, QuotesPageLocators.VALUE_OPTION)
-            ) # i.e. waiting up to 10 seconds to see if the option has a value
+            )
         )
 
         self.select_tag(tag)

@@ -4,10 +4,10 @@ from pages.quotes_page import QuotesPage, InvalidTagForAuthorError
 
 try:
 
-    chrome = webdriver.Chrome() # launches chrome and you can interact with it via chrome
-    chrome.get("https://quotes.toscrape.com/search.aspx") # loads webpage
+    chrome = webdriver.Chrome() #
+    chrome.get("https://quotes.toscrape.com/search.aspx") 
 
-    page = QuotesPage(chrome) # as now chrome is running the page
+    page = QuotesPage(chrome)
 
     author = input("Enter author you want quotes from: ")
     page.select_author(author)
@@ -20,7 +20,7 @@ try:
 
 
     input("Press Enter to close the browser window")
-    chrome.quit() # this block is needed to keep the browser window open (when script terminates it closes)
+    chrome.quit()
 
 except InvalidTagForAuthorError as e:
     print(f'Error: {e}')

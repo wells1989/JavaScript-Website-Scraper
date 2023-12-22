@@ -2,7 +2,6 @@ from selenium.webdriver.common.by import By
 from locators.quote_locators import QuoteLocators
 
 class QuoteParser:
-    #given a specific quote div, get specific data from it, i.e. author, content and tags
     def __init__(self, parent):
         self.parent = parent
 
@@ -15,7 +14,6 @@ class QuoteParser:
         return self.parent.find_element(
                 By.CSS_SELECTOR, locator
                 ).text
-        # e.g. finds one element
         
     @property
     def author(self):
